@@ -6,23 +6,44 @@ import org.junit.Test;
 public class MaximumTest {
 
     @Test
-    public void givenMaxNumberAtFirstPositionShouldReturnMax() {
-        int actualResult = Maximum.getMax(9, 4, 2);
+    public void givenMaxIntegerNumberAtFirstPositionShouldReturnMax() {
+        int actualResult = Maximum.getIntMax(9, 4, 2);
         int expectedResult = 9;
         Assert.assertEquals(expectedResult,actualResult);
     }
 
     @Test
-    public void givenMaxNumberAtSecondPositionShouldReturnMax() {
-        int actualResult = Maximum.getMax(2, 7, 3);
+    public void givenMaxIntegerNumberAtSecondPositionShouldReturnMax() {
+        int actualResult = Maximum.getIntMax(2, 7, 3);
         int expectedResult = 7;
         Assert.assertEquals(expectedResult,actualResult);
     }
 
     @Test
-    public void givenMaxNumberAtThirdPositionShouldReturnMax() {
-        int actualResult = Maximum.getMax(1, 4, 8);
+    public void givenMaxInegerNumberAtThirdPositionShouldReturnMax() {
+        int actualResult = Maximum.getIntMax(1, 4, 8);
         int expectedResult = 8;
         Assert.assertEquals(expectedResult,actualResult);
+    }
+
+    @Test
+    public void givenMaxFloatNumberAtFirstPositionShouldReturnMax() {
+        double actualResult = Maximum.getFloatMax(8.6,2.4,5.7);
+        double expectedResult = 8.6;
+        Assert.assertEquals( actualResult, expectedResult,0.001);
+    }
+
+    @Test
+    public void givenMaxFloatNumberAtSecondPositionShouldReturnMax () {
+        double actualResult = Maximum.getFloatMax(2.4,8.6,5.7);
+        double expectedResult = 8.6;
+        Assert.assertEquals( actualResult, expectedResult,0.001);
+    }
+
+    @Test
+    public void givenMaxFloatNumberAtThirdPositionShouldReturnMax() {
+        double actualResult = Maximum.getFloatMax(2.4,5.7,8.6);
+        double expectedResult = 8.6;
+        Assert.assertEquals( actualResult, expectedResult,0.001);
     }
 }
