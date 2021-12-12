@@ -46,4 +46,26 @@ public class MaximumTest {
         double expectedResult = 8.6;
         Assert.assertEquals( actualResult, expectedResult,0.001);
     }
+
+
+    @Test
+    public void givenMaxStringAtFirstPositionShouldReturnMax() {
+        String actualResult = Maximum.getStringMax("a","b","c");
+        String expectedResult = "a";
+        Assert.assertEquals( actualResult, expectedResult);
+    }
+
+    @Test
+    public void givenMaxStringAtSecondPositionShouldReturnMax() {
+        String actualResult = Maximum.getStringMax("d","b","c");
+        String expectedResult = "b";
+        Assert.assertEquals( actualResult, expectedResult);
+    }
+
+    @Test
+    public void givenMaxStringAtThirdPositionShouldReturnMax() {
+        String actualResult = Maximum.getStringMax("b","c","a");
+        String expectedResult = "a";
+        Assert.assertEquals( actualResult, expectedResult);
+    }
 }
