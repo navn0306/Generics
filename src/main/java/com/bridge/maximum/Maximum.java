@@ -48,5 +48,13 @@ public class Maximum<T extends Comparable> {
         Arrays.sort(a);
         return a[a.length-1];
     }
-    
+
+    @Override
+    public String toString() {
+        return "Maximum{" +
+                "a=" + a +
+                ", b=" + b +
+                ", c=" + c +
+                '}';
+    }
 }
