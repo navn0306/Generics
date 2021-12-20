@@ -48,5 +48,4 @@ public class Maximum<T extends Comparable> {
         Arrays.sort(a);
         return a[a.length-1];
     }
-    
 }
