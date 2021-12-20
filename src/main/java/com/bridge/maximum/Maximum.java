@@ -1,55 +1,61 @@
 package com.bridge.maximum;
+import java.util.*;
 
-public class Maximum {
-    public static void main(String[] args) {
+public class Maximum<T extends Comparable> {
 
-        //for Integers
-        Integer a = 5, b = 9, c = 1;
-        int intMax = Maximum.getIntMax(a, b, c);
-        System.out.println("Integer Maximum : " + intMax);
+    T a, b, c;
 
-        //for Floats
-        Double x = 5.6, y = 3.4, z = 7.8;
-        double floatMax = Maximum.getFloatMax(x, y, z);
-        System.out.println("Float Maximum : " + floatMax);
-
-        //for Strings
-        String s1 = "apple", s2 = "peach", s3 = "mango";
-        String maxString = Maximum.getStringMax(s1, s2, s3);
-        System.out.println(maxString);
-
+    //constructor
+    public Maximum(T a, T b, T c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
     }
 
-    public static int getIntMax(Integer a, Integer b, Integer c) {
-        if (a > b && a > c)
+    public T Maximum() {
+        return Maximum.maximum(a, b, c);
+    }
+
+    public static <T extends Comparable> T maximum(T a, T b, T c) {
+        if (a.compareTo(b) > 0 && a.compareTo(c) > 0) {
             return a;
-        else if (b > a && b > c)
+        } else if (b.compareTo(a) > 0 && b.compareTo(c) > 0) {
             return b;
-        else
+        } else {
             return c;
+        }
     }
 
-    public static double getFloatMax(Double x, Double y, Double z) {
-        if (x > y && x > z)
-            return x;
-        else if (y > x && y > z)
-            return y;
-        else
-            return z;
+    public static <T extends Comparable> T getMax(T a, T b, T c) {
+        if (a.compareTo(b) > 0 && a.compareTo(c) > 0) {
+            return a;
+        } else if (b.compareTo(a) > 0 && b.compareTo(c) > 0) {
+            return b;
+        } else {
+            return c;
+        }
     }
 
-    public static String getStringMax(String s1, String s2, String s3) {
-        if (s1.compareTo(s2) < 0) {
-            if (s1.compareTo(s3) < 0) {
-                return s1;
-            }
-        } else if (s2.compareTo(s1) < 0) {
-            if (s2.compareTo(s3) < 0) {
-                return s2;
-            }
-        } else
-            return s3;
-        return s3;
+    public static void main(String[] args) {
+        Integer intMax = getMax(7, 2, 9);
+        System.out.println(intMax);
+        double floatMax = getMax(7.5, 9.9, 10.4);
+        System.out.println(floatMax);
+        String stringMax = getMax("Mango", "Apple", "Pineapple");
+        System.out.println(stringMax);
     }
+    public static <T extends Comparable> T Maximum(T... a) {
+        Arrays.sort(a);
+        return a[a.length-1];
+    }
+
+    @Override
+    public String toString() {
+        return "Maximum{" +
+                "a=" + a +
+                ", b=" + b +
+                ", c=" + c +
+                '}';
+    }
+
 }
-
