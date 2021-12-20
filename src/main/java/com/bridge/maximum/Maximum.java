@@ -1,4 +1,5 @@
 package com.bridge.maximum;
+
 import java.util.*;
 
 public class Maximum<T extends Comparable> {
@@ -44,9 +45,10 @@ public class Maximum<T extends Comparable> {
         String stringMax = getMax("Mango", "Apple", "Pineapple");
         System.out.println(stringMax);
     }
+
     public static <T extends Comparable> T Maximum(T... a) {
         Arrays.sort(a);
-        return a[a.length-1];
+        return a[a.length - 1];
     }
 
     @Override
